@@ -26,10 +26,21 @@ const server = app.listen(PORT, handleListening);
 
 let sockets = [];
 
+// io going to listen all events :: io is a server
 const io = socketIO.listen(server);
-// with event occured
-io.on("connection", socket => {
-  sockets.push(socket.id);
-});
 
-setInterval(() => console.log(sockets), 1000);
+// with event occured
+// server emit events :: client listening to it.
+
+// what is the difference socket.broadcast.emit and socket.emit
+io.on("connection", socket => {
+  socket.on("newMessage", ({ message }) =>
+    socket.broadcast.emit("messageNotif", {
+      message,
+      nickname: socket.nickname || "Anon"
+    })
+  );
+  socket.on("setNickname", ({ nickname }) => {
+    socket.nickname = nickname;
+  });
+});
