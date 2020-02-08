@@ -35,4 +35,4 @@ const io = socketIO.listen(server);
 // server emit events :: client listening to it.
 
 // what is the difference socket.broadcast.emit and socket.emit
-io.on("connection", socket => socketController(socket));
+io.on("connection", socket => socketController(socket, io));

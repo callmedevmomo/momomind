@@ -9,12 +9,28 @@ html(lang="en")
     body    
         .loginBox
             form#jsLogin
-                input(placeholder="What's your nickname", type="text")
+                input(placeholder="What's your nickname", type="text", maxlength="6")
         .gameContainer#jsGame
+            .main
+                #jsNotifs
+                canvas.canvas#jsCanvas
+                .controls#Jscontrols
+                    button#jsMode Fill
+                    .colors
+                        .color.jsColor(style="background-color:rgb(0, 0, 0)")
+                        .color.jsColor(style="background-color:rgb(255,255,255)")
+                        .color.jsColor(style="background-color:rgb(255,59,48)")
+                        .color.jsColor(style="background-color:rgb(255,149,0)")
+                        .color.jsColor(style="background-color:rgb(255,204,0)")
+                        .color.jsColor(style="background-color:rgb(76,217,100)")
+                        .color.jsColor(style="background-color:rgb(90,200,250)")
+                        .color.jsColor(style="background-color:rgb(0,122,255)")
+                        .color.jsColor(style="background-color:rgb(88,86,214)")
             .chat
+                .player__board#jsPBoard
                 ul.chat__messages#jsMessages
                 form.chat__form#jsSendMsg
-                    input(placeholder="채팅하기" type="text")
+                    input(placeholder="Write a message", type="text")
 
         //- how to handle it in Front-End
         script. 
