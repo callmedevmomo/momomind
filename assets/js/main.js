@@ -1,3 +1,5 @@
+import "./sockets";
 import "./login";
-
-console.log(window.socket);
+import "./notification";
+// in FE
+// console.log(window.events, window.socket);
