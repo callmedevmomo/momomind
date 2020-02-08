@@ -1,14 +1,26 @@
-import { handleMessageNotif } from "./chat";
+const loginForm = document.getElementById("jsLogin");
+const body = document.querySelector("body");
 
-const socket = io("/");
-
-function sendMessage(message) {
-  socket.emit("newMessage", { message });
-  console.log(`You : ${message}`);
+const NICKNAME = "nickname";
+const nickname = localStorage.getItem("nickname");
+const LOGGED_OUT = "loggedOut";
+const LOGGED_IN = "loggedIn";
+//login 조건에 맞는 body 출력
+if (nickname === null) {
+  body.className = LOGGED_OUT;
+} else {
+  body.className = LOGGED_IN;
 }
 
-function setNickName(nickname) {
-  socket.emit("setNickname", { nickname });
-}
+const handleFormSubmit = event => {
+  event.preventDefault();
+  const input = loginForm.querySelector("input");
+  const { value } = input;
+  // console.log(value);
+  input.value = "";
+  localStorage.setItem(NICKNAME, value);
+};
 
-socket.on("messageNotif", handleMessageNotif);
+if (loginForm) {
+  loginForm.addEventListener("submit", handleFormSubmit);
+}
