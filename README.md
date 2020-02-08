@@ -13,3 +13,13 @@
 
 - Stateful WS
 - Stateless HTTP
+
+## Using Gulp insteadOf WebPack
+
+- Gulp && Gulp-SASS && Node-sass
+
+  Static is for files sent to the user, like images, css and client side JS
+
+- Gulp auto-prefixer && gulp-csso
+
+*
