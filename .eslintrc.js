@@ -10,6 +10,11 @@ module.exports = {
     sourceType: "module"
   },
   rules: {
-    "no-console": "off"
+    quotes: "off",
+    "comma-dangle": "off",
+    "no-console": "off",
+    "implicit-arrow-linebreak": "off",
+    "spaced-comment": "off",
+    "no-empty": "off"
   }
 };

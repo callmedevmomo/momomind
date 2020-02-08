@@ -22,4 +22,4 @@
 
 - Gulp auto-prefixer && gulp-csso
 
-*
+## Browserify ==> with babelify
