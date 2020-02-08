@@ -11,8 +11,11 @@ html(lang="en")
             form#jsLogin
                 input(placeholder="What's your nickname", type="text")
         .gameContainer#jsGame
-            h1 You are logged In
-            div#jsNotifications
+            .chat
+                ul.chat__messages#jsMessages
+                form.chat__form#jsSendMsg
+                    input(placeholder="채팅하기" type="text")
+
         //- how to handle it in Front-End
         script. 
             window.events = !{events}

@@ -1,5 +1,5 @@
-import "./sockets";
 import "./login";
-import "./notification";
+import "./sockets";
+import "./chat";
 // in FE
 // console.log(window.events, window.socket);
