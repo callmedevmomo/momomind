@@ -15,6 +15,24 @@
     #jsNotifs {
       color: #34495e;
     }
+    #jsTime {
+      position: absolute;
+      left: 20px;
+      top: 350px;
+      background-color: white;
+      width: 140px;
+      height: 140px;
+      border-radius: 100px;
+      color: #ff7979;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 3px 36px rgba(23, 55, 87, 0.1),
+        0 5px 15px rgba(0, 0, 0, 0.07);
+      padding: 10px;
+      font-weight: 600;
+      font-size: 25px;
+    }
     #jsCanvas {
       width: 700px;
       height: 700px;

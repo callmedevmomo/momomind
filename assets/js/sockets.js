@@ -8,6 +8,7 @@ import {
   handleGameEnded,
   handleGameStarting
 } from "./player";
+import { handleResetTimeOut, handleTimeOut } from "./time";
 // handle all subscriptions
 
 let socket = null;
@@ -28,4 +29,6 @@ export const initSockets = aSocket => {
   socket.on(events.leaderNotif, handleLeaderNotif);
   socket.on(events.gameEnded, handleGameEnded);
   socket.on(events.gameStarting, handleGameStarting);
+  socket.on(events.timeOut, handleTimeOut);
+  socket.on(events.resetTimeOut, handleResetTimeOut);
 };
