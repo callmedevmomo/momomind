@@ -9,9 +9,6 @@ const PORT = 4000;
 
 const app = express();
 
-// why we use join ?
-// console.log(join(__dirname, "views"));
-
 app.set("view engine", "pug");
 
 app.use(express.static(join(__dirname, "static")));
@@ -26,13 +23,6 @@ const handleListening = () => {
 
 const server = app.listen(PORT, handleListening);
 
-// http://localhost:4000/socket.io/socket.io.js
-
-// io going to listen all events :: io is a server
 const io = socketIO.listen(server);
 
-// with event occured
-// server emit events :: client listening to it.
-
-// what is the difference socket.broadcast.emit and socket.emit
 io.on("connection", socket => socketController(socket, io));
