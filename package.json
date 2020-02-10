@@ -7,6 +7,7 @@
   "author": "momo <callmedevmomo@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "@babel/cli": "^7.8.4",
     "@babel/node": "^7.8.4",
     "babelify": "^10.0.0",
     "del": "^5.1.0",
