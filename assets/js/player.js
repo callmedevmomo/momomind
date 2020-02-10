@@ -1,4 +1,11 @@
-import { disableCanvas, hideControls, enableCanvas } from "./paint";
+import {
+  disableCanvas,
+  hideControls,
+  enableCanvas,
+  resetCanvas,
+  showControls
+} from "./paint";
+import { disableChat } from "./chat";
 
 const board = document.getElementById("jsPBoard");
 const notifs = document.getElementById("jsNotifs");
@@ -11,18 +18,32 @@ const addPlayers = players => {
     board.appendChild(playerElement);
   });
 };
+
+const setNotifis = text => {
+  notifs.innerText = "";
+  notifs.innerText = text;
+};
+
 export const handlePlayerUpdate = ({ sockets }) => addPlayers(sockets);
 
 export const handleGameStarted = () => {
-  //disable canvas events
+  setNotifis("");
   disableCanvas();
   hideControls();
-  //hide the canvas controls
 };
 
 export const handleLeaderNotif = ({ word }) => {
   enableCanvas();
   showControls();
-  notifs.innerText = "";
+  disableChat();
   notifs.innerText = `당신이 그릴 차례입니다. 그릴 단어 : ${word}`;
 };
+
+export const handleGameEnded = () => {
+  setNotifis("게임이 끝났습니다.");
+  disableCanvas();
+  hideControls();
+  resetCanvas();
+};
+
+export const handleGameStarting = () => setNotifis("게임이 곧 시작됩니다.");

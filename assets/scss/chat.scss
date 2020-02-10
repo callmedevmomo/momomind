@@ -9,7 +9,7 @@
     box-shadow: 0 3px 36px rgba(23, 55, 87, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
 
     li {
-      margin-bottom: 30px;
+      margin-bottom: 15px;
       font-size: 14px;
 
       span {
@@ -21,7 +21,7 @@
         opacity: 0.9;
       }
       .out {
-        color: $darkBlue;
+        color: $orange;
         opacity: 0.8;
       }
     }
