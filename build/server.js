@@ -18,7 +18,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 
 _dotenv["default"].config();
 
-var PORT = process.env.PORT || 5000;
+var PORT = process.env.PORT || 4000;
 var app = (0, _express["default"])();
 app.set("view engine", "pug");
 app.use(_express["default"]["static"]((0, _path.join)(__dirname, "static")));
