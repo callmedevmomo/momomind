@@ -23,3 +23,7 @@
 - Gulp auto-prefixer && gulp-csso
 
 ## Browserify ==> with babelify
+
+## Deploy in Heroku
+
+    https://calm-plateau-95202.herokuapp.com/
