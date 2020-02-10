@@ -1,11 +1,14 @@
 import { join } from "path";
 import express from "express";
 import socketIO from "socket.io";
+import dotenv from "dotenv";
 import logger from "morgan";
 import socketController from "./socketController";
 import events from "./events";
 
-const PORT = 4000;
+dotenv.config();
+
+const PORT = process.env.PORT || 5000;
 
 const app = express();
 
