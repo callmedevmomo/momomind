@@ -25,7 +25,9 @@
   },
   "scripts": {
     "dev:server": "nodemon --exec babel-node src/server --ignore assets/ --ignore src/static",
-    "dev:assets": "gulp"
+    "dev:assets": "gulp",
+    "build": "yarn dev:server && yarn dev:assets",
+    "prestart": "yarn build"
   },
   "devDependencies": {
     "@babel/core": "^7.8.4",
